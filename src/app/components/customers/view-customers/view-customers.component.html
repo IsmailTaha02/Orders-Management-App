@@ -1,0 +1,108 @@
+<h1 class="card-title">Customers List</h1>
+
+<!-- Search section -->
+<div class="search-section">
+    <label for="customerName" class="bold-label">Search for a customer:</label>
+    <input id="customerName" [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange($event)"
+        placeholder="Customer name">
+</div>
+
+<!-- Customers List -->
+<div *ngIf="customers.length > 0; else nocustomers" class="card-container">
+
+    <div *ngFor="let customer of customers" class="card"
+        (click)="!customer.isEditing && !customer.isDeleting && navigateToOrders(customer.CustomerID)">
+
+        <div class="card-content">
+            <!-- Customer Image -->
+            <div class="customer-image">
+                <img *ngIf="customer.CustomerImage" [src]="'data:image/jpeg;base64,' + customer.CustomerImage"
+                    [alt]="customer.CustomerName">
+            </div>
+
+            <!-- Customer Image input (only in editing mode) -->
+            <div *ngIf="customer.isEditing">
+                <label for="CustomerImage">Customer Image:</label>
+                <input id = "CustomerImage" type="file" (change)="onFileChange($event)" (click)="$event.stopPropagation()">
+            </div>
+
+            <!-- Name (view and edit modes) -->
+            <div *ngIf="!customer.isEditing" class="card-item">
+                <h3>{{ customer.CustomerName }}</h3>
+            </div>
+            <div *ngIf="customer.isEditing" class="card-item">
+                Name: 
+                <input [(ngModel)]="customer.CustomerName" (click)="$event.stopPropagation()" />
+            </div>
+
+            <!-- ID (view mode only) -->
+            <div *ngIf="!customer.isEditing" class="card-item">
+                ID: {{ customer.CustomerID }}
+            </div>
+
+            <!-- Mobile (view and edit modes) -->
+            <div *ngIf="!customer.isEditing" class="card-item">
+                Mobile: {{ customer.CustomerMobile }}
+            </div>
+            <div *ngIf="customer.isEditing" class="card-item">
+                Mobile: 
+                <input [(ngModel)]="customer.CustomerMobile" (click)="$event.stopPropagation()" />
+            </div>
+
+            <!-- Address (view and edit modes) -->
+            <div *ngIf="!customer.isEditing" class="card-item">
+                Address: {{ customer.CustomerAddress }}
+            </div>
+            <div *ngIf="customer.isEditing" class="card-item">
+                Address: 
+                <input [(ngModel)]="customer.CustomerAddress" (click)="$event.stopPropagation()" />
+            </div>
+        </div>
+
+        <!-- Card actions -->
+        <div class="card-actions">
+            <!-- Delete and Update buttons (view mode) -->
+            <button *ngIf="!customer.isEditing && !customer.isDeleting"
+                (click)="startDeleting(customer); $event.stopPropagation()">
+                <img title="Delete customer" src="assets/images/x.jpeg" alt="Delete">
+            </button>
+
+            <button *ngIf="!customer.isEditing && !customer.isDeleting"
+                (click)="startEditing(customer); $event.stopPropagation()">
+                <img title="Update customer" src="assets/images/edit.jpeg" alt="Edit">
+            </button>
+
+            <!-- Save and Cancel buttons (edit mode) -->
+            <button title="Save changes" class="save" *ngIf="customer.isEditing"
+                (click)="saveCustomer(customer); $event.stopPropagation()">
+                Save
+            </button>
+
+            <button title="Cancel changes" class="cancel" *ngIf="customer.isEditing"
+                (click)="cancelEditing(customer); $event.stopPropagation()">
+                Cancel
+            </button>
+
+            <!-- Delete and Cancel Delete buttons (delete mode) -->
+            <button title="Delete customer" class="delete" *ngIf="customer.isDeleting"
+                (click)="deleteCustomer(customer); $event.stopPropagation()">
+                Delete
+            </button>
+
+            <button title="Cancel deleting" class="cancelDelete" *ngIf="customer.isDeleting"
+                (click)="cancelDeleting(customer); $event.stopPropagation()">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- No customers found message -->
+<ng-template #nocustomers>
+    <p>No customers found.</p>
+</ng-template>
+
+<!-- Add Customer Button -->
+<button class="addButton" title="Add customer" *ngIf="!isSearching" (click)="addCustomer()">
+    <img src="assets/images/addCustomer.png" alt="Add Customer">
+</button>

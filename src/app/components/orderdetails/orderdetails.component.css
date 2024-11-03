@@ -1,0 +1,120 @@
+.pattern {
+    width: 100%;
+    height: 50px;
+    /* Adjust height as needed */
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    /* Blue gradient */
+    display: flex;
+    justify-content: center;
+    /* Space between title and button */
+    align-items: center;
+    padding: 0 20px;
+
+    margin-bottom: 30px;
+    /* Padding for better spacing */
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin: 20px 0;
+}
+
+/* Orders Container */
+.orders-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.order-card {
+    background-color: #fffefe;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.order-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-image img {
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+p {
+    margin: 5px 0;
+    color: #555;
+}
+
+strong {
+    color: #333;
+}
+
+/* No Orders */
+.no-orders h1{
+    display: block;
+    text-align: center;
+    color: #000000;
+    font-size: 1.9rem;
+ 
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+/* Add Order Button */
+.add-order-button {
+    background-color: #000000;
+    /* Primary color */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.add-order-button:hover {
+    background-color: #222020;
+    /* Darker shade for hover effect */
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+.add-order-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5);
+    /* Add focus ring */
+}
+
+.button-icon {
+    width: 80px;
+    height: 50px;
+    margin-left: 8px;
+    /* Space between text and icon */
+    vertical-align: middle;
+}

@@ -1,0 +1,236 @@
+
+.pattern {
+    width: 100%;
+    height: 50px;
+    /* Adjust height as needed */
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    /* Blue gradient */
+    display: flex;
+    justify-content: center;
+    /* Space between title and button */
+    align-items: center;
+    padding: 0 20px;
+
+    margin-bottom: 30px;
+    /* Padding for better spacing */
+}
+.pattern img{
+    width: 45px;
+    /* Adjust size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.pattern h1 {
+    color: #ffffff;
+    margin-right: 10px;
+    /* Remove default margin */
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.cart-card {
+    background-color: #fcfafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.cart-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cart-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-image {
+    height: 200px;
+    /* Set a fixed height for the image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Hide overflow to prevent stretching */
+}
+
+.item-image img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container while maintaining aspect ratio */
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 10px 0 10px;
+}
+
+p {
+    margin: 5px 0;
+    
+}
+
+strong {
+    color: #333;
+}
+
+/* empty cart */
+.noOrders{
+    justify-content: center;
+    text-align: center;
+    color: #2b2b2b;
+
+}
+
+button{
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+button img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+button img:hover {
+    transform: scale(1.1);
+    /* Slightly enlarges the image */
+    opacity: 0.8;
+    /* Slightly reduces opacity for a fade effect */
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-dialog {
+    width: 80%;
+    max-width: 400px;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.modal-header,
+.modal-footer {
+    display: flex;
+    padding: 15px;
+}
+
+.modal-body {
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.btn {
+    margin-top: 1px;
+    width: 60px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-danger {
+    margin-left: 120px;
+    margin-right: 10px;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+/* Container for centering the button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Centers horizontally */
+    height: 100vh;
+    /* Full viewport height to center vertically */
+}
+
+/* Style for the button */
+.checkout, .cancelOrder {
+    width: 120px;
+    /* Adjust width as needed */
+    padding: 10px 20px;
+    /* Padding for better appearance */
+    background-color: #000000;
+    /* Button background color */
+    color: #ffffff;
+    /* Button text color */
+    border: none;
+    /* Remove default border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 1rem;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth transition for hover effects */
+}
+
+.cancelOrder{
+    width: 150px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid black;
+}
+
+/* Button hover effects */
+.checkout:hover {
+    background-color: #333333;
+    /* Darker background on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge button on hover */
+}
+
+.cancelOrder:hover {
+    background-color: #fff9f9;
+    /* Darker background on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge button on hover */
+}

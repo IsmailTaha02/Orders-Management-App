@@ -1,0 +1,138 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 300px;
+    height: 430px;
+    /* Reduce the width */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    /* Slight scaling on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-content {
+    margin-bottom: 10px;
+}
+
+.card-item {
+    margin-bottom: 10px;
+    font-size: 17px;
+    /* Slightly smaller text */
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.card-actions button {
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card-actions button img{
+    width: 100%;
+    height: 100%;
+}
+
+.card-actions button:hover {
+    background-color: #f0f0f0;
+    /* Slight background color change on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow effect */
+    transform: scale(1.1);
+    /* Slightly increase the size on hover */
+}
+
+.save, .cancel, .delete, .cancelDelete{
+    font-weight: bold;
+}
+
+.card-content input ,.card-content strong{
+    margin-bottom: 10px;
+}
+
+.search-section {
+    margin-bottom: 20px;
+}
+
+.bold-label {
+    font-weight: bold;
+}
+
+.addButton {
+    background-color: #ffffff;
+    border: none;
+    color: white;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addButton img {
+    width: 90px;
+    height: 90px;
+}
+
+.addButton :hover{
+    width: 100px;
+    height: 100px;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+button img {
+    width: 16px;
+    height: 16px;
+}
+
+.customer-image {
+    height: 200px;
+    /* Set a fixed height for the image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    /* Hide overflow to prevent stretching */
+}
+
+.customer-image img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container while maintaining aspect ratio */
+    border-radius: 8px;
+}
+

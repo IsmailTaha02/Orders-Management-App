@@ -1,0 +1,252 @@
+
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.item-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fffefe;
+    transition: transform 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+}
+
+.item-image {
+    height: 200px;
+    /* Set a fixed height for the image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Hide overflow to prevent stretching */
+}
+
+.item-image img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container while maintaining aspect ratio */
+    border-radius: 8px;
+}
+
+.item-details h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.item-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.quantity-control button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+    width: 40px;
+    height: 30px;
+}
+
+.quantity-control span {
+    font-size: 16px;
+    color: #333;
+}
+
+.add-to-cart {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 40px;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-to-cart img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Ensure the image fits within the button */
+}
+
+.add-to-cart:hover {
+    background-color: #fcfffd;
+}
+
+.add-to-cart:active {
+    background-color: #fefffe;
+}
+
+.message {
+    padding: 15px;
+    margin: 20px auto;
+    border: 2px solid #f39c12;
+    border-radius: 8px;
+    background-color: #fff3cd;
+    color: #856404;
+    text-align: center;
+    font-size: 1.1rem;
+    width: 80%;
+}
+
+.message.success {
+    border-color: #28a745;
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+}
+
+.toast.success {
+    background-color: #28a745;
+    /* Green for success */
+}
+
+.toast.error {
+    background-color: #dc3545;
+    /* Red for error */
+}
+
+.toast.ng-hide {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.modal-content p {
+    font-size: 1.3rem;
+  
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background-color: #000000;
+    color: white;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-content button:last-child {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.pattern {
+    width: 100%;
+    height: 50px;
+    /* Adjust height as needed */
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    /* Blue gradient */
+    display: flex;
+    justify-content: center;
+    /* Space between title and button */
+    align-items: center;
+    padding: 0 20px;
+    /* Padding for better spacing */
+}
+
+.title-container {
+    flex: 1;
+    /* Take up available space */
+    display: flex;
+    justify-content: center;
+    /* Center the header within this container */
+}
+
+.pattern h1 {
+    color: #ffffff;
+    margin: 0;
+    /* Remove default margin */
+}
+
+.image-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.image-button img {
+    width: 45px;
+    /* Adjust size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+

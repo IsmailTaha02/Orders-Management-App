@@ -1,0 +1,20 @@
+<body>
+    <div class="login-container">
+        <h1>Welcome to the Orders Management App</h1>
+        <img src="assets\images\ordersImg.jpeg" alt="Cant show">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" [(ngModel)]="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" [(ngModel)]="password">
+
+        <button (click)="login()">Login</button>
+
+        <!-- Use *ngIf to conditionally display the error message -->
+        <div *ngIf="!isLoggedIn && hasAttemptedLogin" class="error-message">
+            <p>Invalid username or password.</p>
+        </div>
+    </div>
+</body>
+

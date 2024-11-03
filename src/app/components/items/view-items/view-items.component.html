@@ -1,0 +1,46 @@
+
+<div class="pattern">
+    <h1 class="title-container">Items List</h1>
+    <button class="image-button" title="View cart" (click)="viewCart()">
+        <img src="assets/images/cart.png" alt="Button Image"> 
+    </button>
+</div>
+
+
+<div *ngIf="items.length > 0; else noItems" class="items-container">
+    <div *ngFor="let item of items" class="item-card">
+        <div class="item-image">
+            <img *ngIf="item.ItemImage" [src]="'data:image/jpeg;base64,' + item.ItemImage" [alt]="item.ItemName">
+        </div>
+        <div class="item-details">
+            <h2>{{ item.ItemName }}</h2>
+            <p><strong>Price:</strong> {{ item.Price }}$</p>
+            <div class="quantity-control">
+                <button (click)="decreaseQuantity(item)">-</button>
+                <span>{{ item.quantity || 0 }}</span>
+                <button (click)="increaseQuantity(item)">+</button>
+            </div>
+            <button class="add-to-cart" title="Add this item to the cart" (click)="openConfirmationDialog(item)">
+                <img src="assets/images/add-to-cart.png" alt="">
+            </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="toastMessage" class="toast" [ngClass]="{ 'success': isSuccess, 'error': !isSuccess }">
+    {{ toastMessage }}
+</div>
+
+<!-- Custom Modal Confirmation Dialog -->
+<div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+        <p>Are you sure you want to add {{ selectedItem?.quantity }} of {{ selectedItem?.ItemName }} to the cart?</p>
+        <button (click)="confirmAddToCart()">Yes</button>
+        <button (click)="closeModal()">No</button>
+    </div>
+</div>
+
+<ng-template #noItems>
+    <h1>No items found.</h1>
+</ng-template>
+
